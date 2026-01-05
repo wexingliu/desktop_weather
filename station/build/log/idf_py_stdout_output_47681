@@ -1,0 +1,67 @@
+[1/5] cd /home/liuux/esp/desktop_weather/station/build/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/liuux/esp/desktop_weather/station/build/partition_table/partition-table.bin /home/liuux/esp/desktop_weather/station/build/wifi_station.bin
+wifi_station.bin binary size 0xbfb70 bytes. Smallest app partition is 0x100000 bytes. 0x40490 bytes (25%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/liuux/esp/desktop_weather/station/build/bootloader/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/liuux/esp/desktop_weather/station/build/bootloader/bootloader.bin
+Bootloader binary size 0x5290 bytes. 0x2d70 bytes (35%) free.
+[2/3] cd /home/liuux/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/liuux/esp/esp-idf -D "SERIAL_TOOL=/home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python;;/home/liuux/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/liuux/esp/desktop_weather/station/build -P /home/liuux/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 wifi_station.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyACM0
+Connecting....
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 48:31:b7:35:58:44
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000cffff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21136 bytes to 12933...
+Writing at 0x00000000... (100 %)
+Wrote 21136 bytes (12933 compressed) at 0x00000000 in 0.6 seconds (effective 292.7 kbit/s)...
+Hash of data verified.
+Compressed 785264 bytes to 464854...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ab05... (6 %)
+Writing at 0x0001fa6c... (10 %)
+Writing at 0x00027388... (13 %)
+Writing at 0x00031915... (17 %)
+Writing at 0x000387cc... (20 %)
+Writing at 0x0003fe41... (24 %)
+Writing at 0x00046753... (27 %)
+Writing at 0x0004cd5c... (31 %)
+Writing at 0x00053458... (34 %)
+Writing at 0x000595a2... (37 %)
+Writing at 0x0005f13b... (41 %)
+Writing at 0x00065923... (44 %)
+Writing at 0x0006bc7b... (48 %)
+Writing at 0x00071cf0... (51 %)
+Writing at 0x00077d18... (55 %)
+Writing at 0x0007e88d... (58 %)
+Writing at 0x00085658... (62 %)
+Writing at 0x0008c4fe... (65 %)
+Writing at 0x00093751... (68 %)
+Writing at 0x00099b6e... (72 %)
+Writing at 0x0009fcb7... (75 %)
+Writing at 0x000a63b1... (79 %)
+Writing at 0x000ac224... (82 %)
+Writing at 0x000b2606... (86 %)
+Writing at 0x000b8f00... (89 %)
+Writing at 0x000c045f... (93 %)
+Writing at 0x000c6f85... (96 %)
+Writing at 0x000cd37a... (100 %)
+Wrote 785264 bytes (464854 compressed) at 0x00010000 in 13.2 seconds (effective 476.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 542.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

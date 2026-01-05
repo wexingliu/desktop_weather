@@ -1,0 +1,82 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/liuux/esp/desktop_weather/weather/build/bootloader/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/liuux/esp/desktop_weather/weather/build/bootloader/bootloader.bin
+Bootloader binary size 0x5290 bytes. 0x2d70 bytes (35%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_http_client_example.c.obj
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c: In function 'obtain_time':
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:860:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  860 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:32:
+/home/liuux/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:861:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  861 |     sntp_setservername(0, "pool.ntp.org");
+      |     ^~~~~~~~~~~~~~~~~~
+/home/liuux/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:862:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  862 |     sntp_init();
+      |     ^~~~~~~~~
+/home/liuux/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c: At top level:
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:811:13: warning: 'http_partial_download' defined but not used [-Wunused-function]
+  811 | static void http_partial_download(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:747:13: warning: 'http_native_request' defined but not used [-Wunused-function]
+  747 | static void http_native_request(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:722:13: warning: 'https_with_invalid_url' defined but not used [-Wunused-function]
+  722 | static void https_with_invalid_url(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:689:13: warning: 'https_async' defined but not used [-Wunused-function]
+  689 | static void https_async(void)
+      |             ^~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:654:13: warning: 'http_perform_as_stream_reader' defined but not used [-Wunused-function]
+  654 | static void http_perform_as_stream_reader(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:635:13: warning: 'http_download_chunk' defined but not used [-Wunused-function]
+  635 | static void http_download_chunk(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:614:13: warning: 'http_redirect_to_https' defined but not used [-Wunused-function]
+  614 | static void http_redirect_to_https(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:594:13: warning: 'http_absolute_redirect_manual' defined but not used [-Wunused-function]
+  594 | static void http_absolute_redirect_manual(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:575:13: warning: 'http_absolute_redirect' defined but not used [-Wunused-function]
+  575 | static void http_absolute_redirect(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:556:13: warning: 'http_relative_redirect' defined but not used [-Wunused-function]
+  556 | static void http_relative_redirect(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:528:13: warning: 'http_encoded_query' defined but not used [-Wunused-function]
+  528 | static void http_encoded_query(void)
+      |             ^~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:506:13: warning: 'https_with_hostname_path' defined but not used [-Wunused-function]
+  506 | static void https_with_hostname_path(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:240:13: warning: 'http_rest_with_hostname_path' defined but not used [-Wunused-function]
+  240 | static void http_rest_with_hostname_path(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:142:13: warning: 'http_rest_with_url' defined but not used [-Wunused-function]
+  142 | static void http_rest_with_url(void)
+      |             ^~~~~~~~~~~~~~~~~~
+[3/7] Linking C static library esp-idf/main/libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable esp_http_client_example.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32c3 image...
+Merged 2 ELF sections
+Successfully created esp32c3 image.
+Generated /home/liuux/esp/desktop_weather/weather/build/esp_http_client_example.bin
+[7/7] cd /home/liuux/esp/desktop_weather/weather/build/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/liuux/esp/desktop_weather/weather/build/partition_table/partition-table.bin /home/liuux/esp/desktop_weather/weather/build/esp_http_client_example.bin
+FAILED: esp-idf/esptool_py/CMakeFiles/app_check_size /home/liuux/esp/desktop_weather/weather/build/esp-idf/esptool_py/CMakeFiles/app_check_size 
+cd /home/liuux/esp/desktop_weather/weather/build/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/liuux/esp/desktop_weather/weather/build/partition_table/partition-table.bin /home/liuux/esp/desktop_weather/weather/build/esp_http_client_example.bin
+Error: app partition is too small for binary esp_http_client_example.bin size 0x101050:
+  - Part 'factory' 0/0 @ 0x10000 size 0x100000 (overflow 0x1050)
+ninja: build stopped: subcommand failed.

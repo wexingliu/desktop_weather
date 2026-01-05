@@ -1,0 +1,7 @@
+CMake Error at /home/liuux/esp/esp-idf/tools/cmake/component.cmake:440 (message):
+  Called idf_component_register from a non-component directory.
+Call Stack (most recent call first):
+  CMakeLists.txt:17 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

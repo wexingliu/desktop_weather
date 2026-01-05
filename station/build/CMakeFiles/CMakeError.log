@@ -1,0 +1,82 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/liuux/esp/desktop_weather/station/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_c16ee && [1/2] Building C object CMakeFiles/cmTC_c16ee.dir/src.c.obj
+[2/2] Linking C executable cmTC_c16ee
+FAILED: cmTC_c16ee 
+: && /home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_c16ee.dir/src.c.obj -o cmTC_c16ee   && :
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: CMakeFiles/cmTC_c16ee.dir/src.c.obj: in function `main':
+src.c:(.text+0x5c): warning: pthread_join is not implemented and will always fail
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: src.c:(.text+0x74): warning: pthread_exit is not implemented and will always fail
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: src.c:(.text+0x3e): warning: pthread_detach is not implemented and will always fail
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: src.c:(.text+0x30): warning: pthread_create is not implemented and will always fail
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: src.c:(.text+0x4c): warning: pthread_cancel is not implemented and will always fail
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000010074
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: src.c:(.text+0x50): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/liuux/esp/desktop_weather/station/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3bfad && [1/2] Building C object CMakeFiles/cmTC_3bfad.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_3bfad
+FAILED: cmTC_3bfad 
+: && /home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei  -DCHECK_FUNCTION_EXISTS=pthread_create -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_3bfad.dir/CheckFunctionExists.c.obj -o cmTC_3bfad  -lpthreads && :
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: cannot find -lpthreads: 没有那个文件或目录
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: CMakeFiles/cmTC_3bfad.dir/CheckFunctionExists.c.obj: in function `main':
+CheckFunctionExists.c:(.text+0x10): warning: pthread_create is not implemented and will always fail
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /home/liuux/esp/desktop_weather/station/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6616b && [1/2] Building C object CMakeFiles/cmTC_6616b.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_6616b
+FAILED: cmTC_6616b 
+: && /home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei  -DCHECK_FUNCTION_EXISTS=pthread_create -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_6616b.dir/CheckFunctionExists.c.obj -o cmTC_6616b  -lpthread && :
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: cannot find -lpthread: 没有那个文件或目录
+/home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/12.2.0/../../../../riscv32-esp-elf/bin/ld: CMakeFiles/cmTC_6616b.dir/CheckFunctionExists.c.obj: in function `main':
+CheckFunctionExists.c:(.text+0x10): warning: pthread_create is not implemented and will always fail
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if compiler accepts -pthread failed with the following output:
+Change Dir: /home/liuux/esp/desktop_weather/station/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_a37ef && [1/2] Building C object CMakeFiles/cmTC_a37ef.dir/CheckForPthreads.c.obj
+[2/2] Linking C executable cmTC_a37ef
+FAILED: cmTC_a37ef 
+: && /home/liuux/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20250801/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_a37ef.dir/CheckForPthreads.c.obj -o cmTC_a37ef  -pthread && :
+riscv32-esp-elf-gcc: error: unrecognized command-line option '-pthread'
+ninja: build stopped: subcommand failed.
+
+
+

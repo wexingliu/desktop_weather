@@ -1,0 +1,58 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/liuux/esp/desktop_weather/weather/build/bootloader/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/liuux/esp/desktop_weather/weather/build/bootloader/bootloader.bin
+Bootloader binary size 0x5290 bytes. 0x2d70 bytes (35%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_http_client_example.c.obj
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:809:13: warning: 'http_partial_download' defined but not used [-Wunused-function]
+  809 | static void http_partial_download(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:745:13: warning: 'http_native_request' defined but not used [-Wunused-function]
+  745 | static void http_native_request(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:720:13: warning: 'https_with_invalid_url' defined but not used [-Wunused-function]
+  720 | static void https_with_invalid_url(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:687:13: warning: 'https_async' defined but not used [-Wunused-function]
+  687 | static void https_async(void)
+      |             ^~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:652:13: warning: 'http_perform_as_stream_reader' defined but not used [-Wunused-function]
+  652 | static void http_perform_as_stream_reader(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:633:13: warning: 'http_download_chunk' defined but not used [-Wunused-function]
+  633 | static void http_download_chunk(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:612:13: warning: 'http_redirect_to_https' defined but not used [-Wunused-function]
+  612 | static void http_redirect_to_https(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:592:13: warning: 'http_absolute_redirect_manual' defined but not used [-Wunused-function]
+  592 | static void http_absolute_redirect_manual(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:573:13: warning: 'http_absolute_redirect' defined but not used [-Wunused-function]
+  573 | static void http_absolute_redirect(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:554:13: warning: 'http_relative_redirect' defined but not used [-Wunused-function]
+  554 | static void http_relative_redirect(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:526:13: warning: 'http_encoded_query' defined but not used [-Wunused-function]
+  526 | static void http_encoded_query(void)
+      |             ^~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:504:13: warning: 'https_with_hostname_path' defined but not used [-Wunused-function]
+  504 | static void https_with_hostname_path(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:238:13: warning: 'http_rest_with_hostname_path' defined but not used [-Wunused-function]
+  238 | static void http_rest_with_hostname_path(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/liuux/esp/desktop_weather/weather/main/esp_http_client_example.c:140:13: warning: 'http_rest_with_url' defined but not used [-Wunused-function]
+  140 | static void http_rest_with_url(void)
+      |             ^~~~~~~~~~~~~~~~~~
+[3/7] Linking C static library esp-idf/main/libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable esp_http_client_example.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32c3 image...
+Merged 2 ELF sections
+Successfully created esp32c3 image.
+Generated /home/liuux/esp/desktop_weather/weather/build/esp_http_client_example.bin
+[7/7] cd /home/liuux/esp/desktop_weather/weather/build/esp-idf/esptool_py && /home/liuux/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/liuux/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/liuux/esp/desktop_weather/weather/build/partition_table/partition-table.bin /home/liuux/esp/desktop_weather/weather/build/esp_http_client_example.bin
+esp_http_client_example.bin binary size 0xfb760 bytes. Smallest app partition is 0x100000 bytes. 0x48a0 bytes (2%) free.
+Warning: The smallest app partition is nearly full (2% free space left)!
